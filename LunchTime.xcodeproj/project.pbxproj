@@ -10,6 +10,7 @@
 		BA6E30D5A154F5713C372B94 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */; };
 		BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6E3102FC6754684451A148 /* Assets.xcassets */; };
 		BA6E32087CA47EA73D2E44D7 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38E8189643E91F859B29 /* ScheduleViewController.swift */; };
+		BA6E324161941FD938ABBD5E /* MockLunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3A119A08D489E31A4EF7 /* MockLunchViewModel.swift */; };
 		BA6E35F5E0DF51095B45C3B0 /* ScheduleListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3824DD609E2A6A85F897 /* ScheduleListViewControllerTest.swift */; };
 		BA6E36DF230A0170F3BB6CE2 /* LunchAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		BA6E3919425A48F8D0BB27E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockURLSession.swift; path = Mocks/MockURLSession.swift; sourceTree = "<group>"; };
 		BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA6E3A119A08D489E31A4EF7 /* MockLunchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockLunchViewModel.swift; path = Mocks/MockLunchViewModel.swift; sourceTree = "<group>"; };
 		BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockURLSessionDataTask.swift; path = Mocks/MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchAPITest.swift; path = Networking/LunchAPITest.swift; sourceTree = "<group>"; };
 		BA6E3C0FCBB9D9B23B88CE9C /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LunchTimeTests.xctest; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTimeTests.xctest"; sourceTree = "<absolute>"; };
@@ -96,6 +98,7 @@
 				BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */,
 				BA6E3750448873373947390B /* MockDispatchQueue.swift */,
 				BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */,
+				BA6E3A119A08D489E31A4EF7 /* MockLunchViewModel.swift */,
 			);
 			path = LunchTimeTests;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				BA6E30D5A154F5713C372B94 /* MockURLSessionDataTask.swift in Sources */,
 				BA6E3D4816EFA89D03E82B0F /* MockDispatchQueue.swift in Sources */,
 				BA6E3C94CF307B28135A7D1E /* LunchViewModelTest.swift in Sources */,
+				BA6E324161941FD938ABBD5E /* MockLunchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
