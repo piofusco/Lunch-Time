@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6E3102FC6754684451A148 /* Assets.xcassets */; };
-		BA6E32087CA47EA73D2E44D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38E8189643E91F859B29 /* ViewController.swift */; };
+		BA6E32087CA47EA73D2E44D7 /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38E8189643E91F859B29 /* ScheduleListViewController.swift */; };
 		BA6E35F5E0DF51095B45C3B0 /* LunchTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3824DD609E2A6A85F897 /* LunchTimeTests.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
 		BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */; };
@@ -31,7 +31,7 @@
 		BA6E353055F2E8D9CC2BDF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		BA6E3824DD609E2A6A85F897 /* LunchTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeTests.swift; sourceTree = "<group>"; };
 		BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA6E38E8189643E91F859B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA6E38E8189643E91F859B29 /* ScheduleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewController.swift; sourceTree = "<group>"; };
 		BA6E3919425A48F8D0BB27E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6E3C0FCBB9D9B23B88CE9C /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LunchTimeTests.xctest; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTimeTests.xctest"; sourceTree = "<absolute>"; };
@@ -79,7 +79,7 @@
 				BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */,
 				BA6E353055F2E8D9CC2BDF8B /* Info.plist */,
 				BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */,
-				BA6E38E8189643E91F859B29 /* ViewController.swift */,
+				BA6E38E8189643E91F859B29 /* ScheduleListViewController.swift */,
 			);
 			path = LunchTime;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 			files = (
 				BA6E3E85F99741F0DA3AFA40 /* AppDelegate.swift in Sources */,
 				BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */,
-				BA6E32087CA47EA73D2E44D7 /* ViewController.swift in Sources */,
+				BA6E32087CA47EA73D2E44D7 /* ScheduleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
