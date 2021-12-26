@@ -23,9 +23,7 @@ class LunchViewModelTest: XCTestCase {
             DailyMenu(id: "0", menu: "menu 0"),
             DailyMenu(id: "1", menu: "menu 1")
         ])
-        let mockLunchViewModelDelegate = MockLunchViewModelDelegate()
         let subject = GustoViewModel(api: mockLunchAPI)
-        subject.delegate = mockLunchViewModelDelegate
         var completionDidRun = false
 
         subject.getMenus(page: 99) { result in
@@ -36,7 +34,6 @@ class LunchViewModelTest: XCTestCase {
         }
 
         XCTAssertTrue(completionDidRun)
-        XCTAssertTrue(mockLunchViewModelDelegate.didUpdateMenus)
         XCTAssertEqual(mockLunchAPI.lastPage, 99)
         XCTAssertEqual(subject.menus.count, 2)
     }
@@ -44,9 +41,7 @@ class LunchViewModelTest: XCTestCase {
     func test__getMenus__failure__doNotUpdateMenus__doNotCallDelegate() {
         let mockLunchAPI = MockLunchAPI()
         mockLunchAPI.nextResult = Result.failure(NSError(domain: "doesn't matter", code: -1))
-        let mockLunchViewModelDelegate = MockLunchViewModelDelegate()
         let subject = GustoViewModel(api: mockLunchAPI)
-        subject.delegate = mockLunchViewModelDelegate
         var completionDidRun = false
 
         subject.getMenus(page: 99) { result in
@@ -57,7 +52,6 @@ class LunchViewModelTest: XCTestCase {
         }
 
         XCTAssertTrue(completionDidRun)
-        XCTAssertFalse(mockLunchViewModelDelegate.didUpdateMenus)
         XCTAssertEqual(mockLunchAPI.lastPage, 99)
         XCTAssertEqual(subject.menus.count, 0)
     }
@@ -74,13 +68,5 @@ class MockLunchAPI: LunchAPI {
         guard let nextResult = nextResult else { fatalError("next result not set") }
 
         completion(nextResult)
-    }
-}
-
-class MockLunchViewModelDelegate: LunchViewModelDelegate {
-    var didUpdateMenus = false
-
-    func menusDidUpdate() {
-        didUpdateMenus = true
     }
 }

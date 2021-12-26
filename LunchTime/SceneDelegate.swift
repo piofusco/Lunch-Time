@@ -16,8 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        let scheduleListViewController = ScheduleListViewController()
-
+        let lunchAPI = GustoLunchAPI(urlSession: URLSession.shared)
+        let lunchViewModel = GustoViewModel(api: lunchAPI)
+        let scheduleListViewController = ScheduleViewController(
+                viewModel: lunchViewModel,
+                dispatchQueue: LunchDispatchQueue()
+        )
         let navigationController = UINavigationController(rootViewController: scheduleListViewController)
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController
