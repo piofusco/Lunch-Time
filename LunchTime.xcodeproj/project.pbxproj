@@ -13,11 +13,13 @@
 		BA6E35F5E0DF51095B45C3B0 /* ScheduleListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3824DD609E2A6A85F897 /* ScheduleListViewControllerTest.swift */; };
 		BA6E36DF230A0170F3BB6CE2 /* LunchAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
-		BA6E38BAC46554D18CF923C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA6E3BF3B9E2BB0EC3245A49 /* Localizable.strings */; };
 		BA6E399F48CF76E38B97A356 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */; };
 		BA6E3A87F7A8A7858D1A663A /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3F35970F497FC2547622 /* DispatchQueueProtocol.swift */; };
+		BA6E3B2BDA3E57F39F3B40B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA6E32D17EDCA176B5E415F7 /* Localizable.strings */; };
 		BA6E3B693401819CD4744E95 /* LunchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3E78C9A8198839B79303 /* LunchError.swift */; };
 		BA6E3BEF85DA8D5B3AEAC169 /* LunchURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3EE7B9C6A78333AD9E40 /* LunchURLSession.swift */; };
+		BA6E3C94CF307B28135A7D1E /* LunchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */; };
+		BA6E3CA0462C0780A40C9BAC /* LunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38D6D936FADCA3C5F20B /* LunchViewModel.swift */; };
 		BA6E3D4816EFA89D03E82B0F /* MockDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3750448873373947390B /* MockDispatchQueue.swift */; };
 		BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */; };
 		BA6E3E85F99741F0DA3AFA40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */; };
@@ -37,19 +39,21 @@
 
 /* Begin PBXFileReference section */
 		6312FF222778C36A004325DE /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LunchTime.app; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTime.app"; sourceTree = "<absolute>"; };
+		BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchViewModelTest.swift; sourceTree = "<group>"; };
 		BA6E3102FC6754684451A148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA6E32D17EDCA176B5E415F7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA6E33FCE3CEE96828C25199 /* DailyMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyMenu.swift; path = Networking/DailyMenu.swift; sourceTree = "<group>"; };
 		BA6E353055F2E8D9CC2BDF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		BA6E3750448873373947390B /* MockDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDispatchQueue.swift; path = Mocks/MockDispatchQueue.swift; sourceTree = "<group>"; };
 		BA6E3824DD609E2A6A85F897 /* ScheduleListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewControllerTest.swift; sourceTree = "<group>"; };
 		BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BA6E38D6D936FADCA3C5F20B /* LunchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchViewModel.swift; sourceTree = "<group>"; };
 		BA6E38E8189643E91F859B29 /* ScheduleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewController.swift; sourceTree = "<group>"; };
 		BA6E3919425A48F8D0BB27E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockURLSession.swift; path = Mocks/MockURLSession.swift; sourceTree = "<group>"; };
 		BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockURLSessionDataTask.swift; path = Mocks/MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchAPITest.swift; path = Networking/LunchAPITest.swift; sourceTree = "<group>"; };
-		BA6E3BF3B9E2BB0EC3245A49 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Networking/Localizable.strings; sourceTree = "<group>"; };
 		BA6E3C0FCBB9D9B23B88CE9C /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LunchTimeTests.xctest; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTimeTests.xctest"; sourceTree = "<absolute>"; };
 		BA6E3D388441FAC554291D6E /* LunchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchAPI.swift; path = Networking/LunchAPI.swift; sourceTree = "<group>"; };
 		BA6E3E78C9A8198839B79303 /* LunchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchError.swift; path = Networking/LunchError.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */,
 				BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */,
 				BA6E3750448873373947390B /* MockDispatchQueue.swift */,
+				BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */,
 			);
 			path = LunchTimeTests;
 			sourceTree = "<group>";
@@ -108,8 +113,9 @@
 				BA6E3EE7B9C6A78333AD9E40 /* LunchURLSession.swift */,
 				BA6E3F35970F497FC2547622 /* DispatchQueueProtocol.swift */,
 				BA6E3E78C9A8198839B79303 /* LunchError.swift */,
-				BA6E3BF3B9E2BB0EC3245A49 /* Localizable.strings */,
 				BA6E33FCE3CEE96828C25199 /* DailyMenu.swift */,
+				BA6E32D17EDCA176B5E415F7 /* Localizable.strings */,
+				BA6E38D6D936FADCA3C5F20B /* LunchViewModel.swift */,
 			);
 			path = LunchTime;
 			sourceTree = "<group>";
@@ -186,7 +192,7 @@
 			files = (
 				BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */,
 				BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */,
-				BA6E38BAC46554D18CF923C0 /* Localizable.strings in Resources */,
+				BA6E3B2BDA3E57F39F3B40B8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +215,7 @@
 				BA6E399F48CF76E38B97A356 /* MockURLSession.swift in Sources */,
 				BA6E30D5A154F5713C372B94 /* MockURLSessionDataTask.swift in Sources */,
 				BA6E3D4816EFA89D03E82B0F /* MockDispatchQueue.swift in Sources */,
+				BA6E3C94CF307B28135A7D1E /* LunchViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +231,7 @@
 				BA6E3A87F7A8A7858D1A663A /* DispatchQueueProtocol.swift in Sources */,
 				BA6E3B693401819CD4744E95 /* LunchError.swift in Sources */,
 				BA6E3F00F6692326328E7609 /* DailyMenu.swift in Sources */,
+				BA6E3CA0462C0780A40C9BAC /* LunchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
