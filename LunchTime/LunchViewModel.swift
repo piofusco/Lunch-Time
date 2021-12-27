@@ -24,8 +24,8 @@ class GustoViewModel: LunchViewModel {
             guard let self = self else { return }
 
             switch result {
-            case .success(let menus): print()
-                self.menus.append(contentsOf: menus)
+            case .success(let menus):
+                self.menus = menus
                 completion(Result.success(true))
             case .failure(let error): completion(Result.failure(error))
             }

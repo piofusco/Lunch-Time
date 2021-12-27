@@ -16,7 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        let lunchAPI = GustoLunchAPI(urlSession: URLSession.shared)
+        let lunchAPI = GustoLunchAPI(
+                urlSession: URLSession.shared,
+                decoder: JSONDecoder()
+        )
         let lunchViewModel = GustoViewModel(api: lunchAPI)
         let scheduleListViewController = ScheduleViewController(
                 viewModel: lunchViewModel,
@@ -29,13 +32,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {}
+    func sceneDidDisconnect(_ scene: UIScene) {
+    }
 
-    func sceneDidBecomeActive(_ scene: UIScene) {}
+    func sceneDidBecomeActive(_ scene: UIScene) {
+    }
 
-    func sceneWillResignActive(_ scene: UIScene) {}
+    func sceneWillResignActive(_ scene: UIScene) {
+    }
 
-    func sceneWillEnterForeground(_ scene: UIScene) {}
+    func sceneWillEnterForeground(_ scene: UIScene) {
+    }
 
-    func sceneDidEnterBackground(_ scene: UIScene) {}
+    func sceneDidEnterBackground(_ scene: UIScene) {
+    }
 }
