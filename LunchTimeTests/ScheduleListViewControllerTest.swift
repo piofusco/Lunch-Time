@@ -24,10 +24,10 @@ class ScheduleListViewControllerTest: XCTestCase {
     func test__viewDidLoad__willLoadMenus__success__reloadTableView() {
         let mockLunchViewModel = MockLunchViewModel()
         mockLunchViewModel.nextMenus = [
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.success(true)
         let mockDispatchQueue = MockDispatchQueue()
@@ -46,10 +46,10 @@ class ScheduleListViewControllerTest: XCTestCase {
     func test__viewDidLoad__willLoadMenus__failure__doNothing() {
         let mockLunchViewModel = MockLunchViewModel()
         mockLunchViewModel.nextMenus = [
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.success(false)
         let mockDispatchQueue = MockDispatchQueue()
@@ -71,10 +71,10 @@ class ScheduleListViewControllerTest: XCTestCase {
     func test__viewDidLoad__willLoadMenus__error__doNothing() {
         let mockLunchViewModel = MockLunchViewModel()
         mockLunchViewModel.nextMenus = [
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
-            DailyMenu(id: "", menu: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
+            Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.failure(NSError(domain: "doesn't matter", code: -1))
         let mockDispatchQueue = MockDispatchQueue()

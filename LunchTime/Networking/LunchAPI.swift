@@ -5,7 +5,7 @@
 import Foundation
 
 protocol LunchAPI {
-    func getMenus(page: Int, completion: @escaping (Result<[DailyMenu], Error>) -> Void)
+    func getMenus(page: Int, completion: @escaping (Result<[Menu], Error>) -> ())
 }
 
 class GustoLunchAPI : LunchAPI {
@@ -16,7 +16,7 @@ class GustoLunchAPI : LunchAPI {
         self.urlSession = urlSession
     }
 
-    func getMenus(page: Int, completion: @escaping (Result<[DailyMenu], Error>) -> ()) {
+    func getMenus(page: Int, completion: @escaping (Result<[Menu], Error>) -> ()) {
         guard let url = URL(string: baseURLString + "?page=\(page)") else { return }
 
         urlSession.makeDataTask(with: URLRequest(url: url)) { data, response, error in
@@ -26,9 +26,9 @@ class GustoLunchAPI : LunchAPI {
             if response.statusCode == 200 {
                 guard let data = data else { return }
 
-                var response: [DailyMenu]?
+                var response: [Menu]?
                 do {
-                    response = try JSONDecoder().decode([DailyMenu].self, from: data)
+                    response = try JSONDecoder().decode([Menu].self, from: data)
                 } catch {
                     print(error)
                 }

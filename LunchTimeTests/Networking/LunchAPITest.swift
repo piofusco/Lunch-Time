@@ -26,7 +26,7 @@ class APITest: XCTestCase {
         mockURLSession.nextDataTask = MockURLSessionDataTask()
         let subject = GustoLunchAPI(urlSession: mockURLSession)
         var completionDidRun = false
-        var returnedDailyMenus: [DailyMenu]?
+        var returnedDailyMenus: [Menu]?
 
         subject.getMenus(page: 1) { result in
             completionDidRun = true
@@ -43,10 +43,10 @@ class APITest: XCTestCase {
             return
         }
         XCTAssertEqual(menus.count, 2)
-        XCTAssertEqual(menus[0].id, "0")
-        XCTAssertEqual(menus[0].menu, "some menu 0")
-        XCTAssertEqual(menus[1].id, "1")
-        XCTAssertEqual(menus[1].menu, "some menu 1")
+        XCTAssertEqual(menus[0].dayOfTheWeek, "Sunday")
+        XCTAssertNil(menus[0].description)
+        XCTAssertEqual(menus[1].dayOfTheWeek, "Monday")
+        XCTAssertEqual(menus[1].description, "some menu 1")
     }
 
     func test__getMenus__200__noData__doNotRunCompletion() {
@@ -129,12 +129,11 @@ fileprivate extension HTTPURLResponse {
 fileprivate let pageResponseJSON = """
 [
     {
-      "id": "0",
-      "menu": "some menu 0"
+      "dayOfTheWeek": "Sunday"
     },
     {
-      "id": "1",
-      "menu": "some menu 1"
+      "dayOfTheWeek": "Monday",
+      "description": "some menu 1"
     }
 ]
 """.data(using: .utf8)
