@@ -8,11 +8,7 @@ import Foundation
 class MockLunchAPI: LunchAPI {
     var nextResult: Result<[Menu], Error>?
 
-    var lastPage: Int?
-
-    func getMenus(page: Int, completion: @escaping (Result<[Menu], Error>) -> ()) {
-        lastPage = page
-
+    func getMenus(completion: @escaping (Result<[Menu], Error>) -> ()) {
         guard let nextResult = nextResult else { fatalError("next result not set") }
 
         completion(nextResult)

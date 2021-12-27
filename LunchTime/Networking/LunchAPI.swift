@@ -5,19 +5,19 @@
 import Foundation
 
 protocol LunchAPI {
-    func getMenus(page: Int, completion: @escaping (Result<[Menu], Error>) -> ())
+    func getMenus(completion: @escaping (Result<[Menu], Error>) -> ())
 }
 
 class GustoLunchAPI : LunchAPI {
     private let urlSession: LunchURLSession
-    private let baseURLString = "http://localhost:4567/api/menu/"
+    private let baseURLString = "http://localhost:4567/api/menu"
 
     init(urlSession: LunchURLSession) {
         self.urlSession = urlSession
     }
 
-    func getMenus(page: Int, completion: @escaping (Result<[Menu], Error>) -> ()) {
-        guard let url = URL(string: baseURLString + "?page=\(page)") else { return }
+    func getMenus(completion: @escaping (Result<[Menu], Error>) -> ()) {
+        guard let url = URL(string: baseURLString) else { return }
 
         urlSession.makeDataTask(with: URLRequest(url: url)) { data, response, error in
             if let error = error { completion(Result.failure(error)) }

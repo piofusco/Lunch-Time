@@ -3,7 +3,6 @@
 //
 
 import Foundation
-
 @testable import LunchTime
 
 class MockLunchViewModel: LunchViewModel {
@@ -11,7 +10,7 @@ class MockLunchViewModel: LunchViewModel {
     var nextGetMenusResult: Result<Bool, Error>?
     var didGetMenus = false
 
-    func getMenusFromAPI(page: Int, completion: @escaping (Result<Bool, Error>) -> ()) {
+    func getMenusFromAPI(completion: @escaping (Result<Bool, Error>) -> ()) {
         didGetMenus = true
 
         guard let nextGetMenusResult = nextGetMenusResult else {
@@ -28,7 +27,4 @@ class MockLunchViewModel: LunchViewModel {
         }
     }
 
-    func getMenusForNext2Weeks(date: Date, completion: @escaping (Result<Bool, Error>) -> ()) {
-
-    }
 }

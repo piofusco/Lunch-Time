@@ -7,7 +7,7 @@ import Foundation
 protocol LunchViewModel {
     var menus: [Menu] { get }
 
-    func getMenusFromAPI(page: Int, completion: @escaping (Result<Bool, Error>) -> Void)
+    func getMenusFromAPI(completion: @escaping (Result<Bool, Error>) -> ())
 }
 
 class GustoViewModel: LunchViewModel {
@@ -17,25 +17,10 @@ class GustoViewModel: LunchViewModel {
         self.api = api
     }
 
-    private(set) var menus: [Menu] = [
-        Menu(dayOfTheWeek: "Sunday", description: nil),
-        Menu(dayOfTheWeek: "Monday", description: "Chicken and Waffles"),
-        Menu(dayOfTheWeek: "Tuesday", description: "Tacos"),
-        Menu(dayOfTheWeek: "Wednesday", description: "Curry"),
-        Menu(dayOfTheWeek: "Thursday", description: "Pizza"),
-        Menu(dayOfTheWeek: "Friday", description: "Sushi"),
-        Menu(dayOfTheWeek: "Saturday", description: nil),
-        Menu(dayOfTheWeek: "Sunday", description: nil),
-        Menu(dayOfTheWeek: "Monday", description: "Breakfast for lunch"),
-        Menu(dayOfTheWeek: "Tuesday", description: "Hamburgers"),
-        Menu(dayOfTheWeek: "Wednesday", description: "Spaghetti"),
-        Menu(dayOfTheWeek: "Thursday", description: "Salmon"),
-        Menu(dayOfTheWeek: "Friday", description: "Sandwiches"),
-        Menu(dayOfTheWeek: "Saturday", description: nil)
-    ]
+    private(set) var menus: [Menu] = []
 
-    func getMenusFromAPI(page: Int, completion: @escaping (Result<Bool, Error>) -> ()) {
-        api.getMenus(page: page) { [weak self] result in
+    func getMenusFromAPI(completion: @escaping (Result<Bool, Error>) -> ()) {
+        api.getMenus { [weak self] result in
             guard let self = self else { return }
 
             switch result {

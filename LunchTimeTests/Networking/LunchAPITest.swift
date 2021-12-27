@@ -13,10 +13,10 @@ class APITest: XCTestCase {
         mockURLSession.nextDataTask = mockURLSessionDataTask
         let subject = GustoLunchAPI(urlSession: mockURLSession)
 
-        subject.getMenus(page: 1) { _ in }
+        subject.getMenus { _ in }
 
         XCTAssertTrue(mockURLSessionDataTask.didResume)
-        XCTAssertEqual(mockURLSession.lastURL, URL(string: "http://localhost:4567/api/menu/?page=1"))
+        XCTAssertEqual(mockURLSession.lastURL, URL(string: "http://localhost:4567/api/menu"))
     }
 
     func test__getMenus__200__callCompletionWithData() {
@@ -28,7 +28,7 @@ class APITest: XCTestCase {
         var completionDidRun = false
         var returnedDailyMenus: [Menu]?
 
-        subject.getMenus(page: 1) { result in
+        subject.getMenus { result in
             completionDidRun = true
 
             switch result {
@@ -56,7 +56,7 @@ class APITest: XCTestCase {
         let subject = GustoLunchAPI(urlSession: mockURLSession)
         var completionDidRun = false
 
-        subject.getMenus(page: 1) { result in
+        subject.getMenus { result in
             completionDidRun = true
             XCTFail("should not run completion")
         }
@@ -71,7 +71,7 @@ class APITest: XCTestCase {
         let subject = GustoLunchAPI(urlSession: mockURLSession)
         var completionDidRun = false
 
-        subject.getMenus(page: 1) { result in
+        subject.getMenus { result in
             switch result {
             case .success(_): XCTFail("result shouldn't be a failure")
             case .failure(let error):
@@ -90,7 +90,7 @@ class APITest: XCTestCase {
         let subject = GustoLunchAPI(urlSession: mockURLSession)
         var completionDidRun = false
 
-        subject.getMenus(page: 1) { result in
+        subject.getMenus { result in
             switch result {
             case .success(_): XCTFail("result shouldn't be a failure")
             case .failure(let error):
@@ -109,7 +109,7 @@ class APITest: XCTestCase {
         let subject = GustoLunchAPI(urlSession: mockURLSession)
         var completionDidRun = false
 
-        subject.getMenus(page: 1) { result in
+        subject.getMenus { result in
             switch result {
             case .success(_): XCTFail("result shouldn't be a failure")
             case .failure(_): completionDidRun = true

@@ -39,7 +39,7 @@ class ScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.getMenus(page: 1) { [weak self] result in
+        viewModel.getMenusFromAPI { [weak self] result in
             guard let self = self else { return }
 
             switch result {
@@ -61,6 +61,9 @@ extension ScheduleViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell(style: .default, reuseIdentifier: "DailyMenuCell")
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "DailyMenuCell")
+        cell.textLabel?.text = viewModel.menus[indexPath.row].dayOfTheWeek
+        cell.detailTextLabel?.text = viewModel.menus[indexPath.row].description
+        return cell
     }
 }
