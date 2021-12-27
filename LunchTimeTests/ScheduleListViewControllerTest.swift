@@ -15,7 +15,7 @@ class ScheduleListViewControllerTest: XCTestCase {
         mockLunchViewModel.nextMenus = []
         let subject = ScheduleViewController(
                 viewModel: mockLunchViewModel,
-                dispatchQueue: MockDispatchQueue()
+                mainQueue: MockMainQueue()
         )
 
         XCTAssertEqual(subject.tableView(UITableView(), numberOfRowsInSection: 0), 0)
@@ -30,10 +30,10 @@ class ScheduleListViewControllerTest: XCTestCase {
             Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.success(true)
-        let mockDispatchQueue = MockDispatchQueue()
+        let mockDispatchQueue = MockMainQueue()
         let subject = ScheduleViewController(
                 viewModel: mockLunchViewModel,
-                dispatchQueue: mockDispatchQueue
+                mainQueue: mockDispatchQueue
         )
 
         subject.viewDidLoad()
@@ -52,10 +52,10 @@ class ScheduleListViewControllerTest: XCTestCase {
             Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.success(false)
-        let mockDispatchQueue = MockDispatchQueue()
+        let mockDispatchQueue = MockMainQueue()
         let subject = ScheduleViewController(
                 viewModel: mockLunchViewModel,
-                dispatchQueue: mockDispatchQueue
+                mainQueue: mockDispatchQueue
         )
 
         subject.viewDidLoad()
@@ -77,10 +77,10 @@ class ScheduleListViewControllerTest: XCTestCase {
             Menu(dayOfTheWeek: "", description: ""),
         ]
         mockLunchViewModel.nextGetMenusResult = Result.failure(NSError(domain: "doesn't matter", code: -1))
-        let mockDispatchQueue = MockDispatchQueue()
+        let mockDispatchQueue = MockMainQueue()
         let subject = ScheduleViewController(
                 viewModel: mockLunchViewModel,
-                dispatchQueue: mockDispatchQueue
+                mainQueue: mockDispatchQueue
         )
 
         subject.viewDidLoad()

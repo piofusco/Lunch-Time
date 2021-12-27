@@ -4,11 +4,11 @@
 
 import Foundation
 
-protocol DispatchQueueProtocol {
+protocol MainQueue {
     func async(execute: @escaping @convention(block) () -> Void)
 }
 
-class LunchDispatchQueue: DispatchQueueProtocol {
+class LunchMainQueue: MainQueue {
     func async(execute: @escaping @convention(block) () -> Void) {
         DispatchQueue.main.async(execute: execute)
     }

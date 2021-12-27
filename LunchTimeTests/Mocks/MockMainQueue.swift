@@ -4,7 +4,7 @@
 
 @testable import LunchTime
 
-class MockDispatchQueue: DispatchQueueProtocol {
+class MockMainQueue: MainQueue {
     var didAsync = false
 
     func async(execute: @escaping @convention(block) () -> ()) {

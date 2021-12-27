@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let lunchViewModel = GustoViewModel(api: lunchAPI)
         let scheduleListViewController = ScheduleViewController(
                 viewModel: lunchViewModel,
-                dispatchQueue: LunchDispatchQueue()
+                mainQueue: LunchMainQueue()
         )
         let navigationController = UINavigationController(rootViewController: scheduleListViewController)
         let window = UIWindow(windowScene: windowScene)

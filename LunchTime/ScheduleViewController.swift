@@ -17,11 +17,11 @@ class ScheduleViewController: UIViewController {
     }()
 
     private let viewModel: LunchViewModel
-    private let dispatchQueue: DispatchQueueProtocol
+    private let mainQueue: MainQueue
 
-    init(viewModel: LunchViewModel, dispatchQueue: DispatchQueueProtocol) {
+    init(viewModel: LunchViewModel, mainQueue: MainQueue) {
         self.viewModel = viewModel
-        self.dispatchQueue = dispatchQueue
+        self.mainQueue = mainQueue
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,13 +40,14 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
 
         viewModel.getMenusFromAPI { [weak self] result in
-            guard let self = self else { return }
+            guard let mainQueue = self?.mainQueue,
+                  let tableView = self?.tableView else { return }
 
-            switch result {
+            switch result { 
             case .success(let shouldReload):
                 if shouldReload {
-                    self.dispatchQueue.async {
-                        self.tableView.reloadData()
+                    mainQueue.async {
+                        tableView.reloadData()
                     }
                 }
             case .failure(let error): print(error)

@@ -15,13 +15,13 @@
 		BA6E36DF230A0170F3BB6CE2 /* LunchAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
 		BA6E399F48CF76E38B97A356 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */; };
-		BA6E3A87F7A8A7858D1A663A /* DispatchQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3F35970F497FC2547622 /* DispatchQueueProtocol.swift */; };
+		BA6E3A87F7A8A7858D1A663A /* MainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3F35970F497FC2547622 /* MainQueue.swift */; };
 		BA6E3B2BDA3E57F39F3B40B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA6E32D17EDCA176B5E415F7 /* Localizable.strings */; };
 		BA6E3B693401819CD4744E95 /* LunchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3E78C9A8198839B79303 /* LunchError.swift */; };
 		BA6E3BEF85DA8D5B3AEAC169 /* LunchURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3EE7B9C6A78333AD9E40 /* LunchURLSession.swift */; };
 		BA6E3C94CF307B28135A7D1E /* LunchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */; };
 		BA6E3CA0462C0780A40C9BAC /* LunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38D6D936FADCA3C5F20B /* LunchViewModel.swift */; };
-		BA6E3D4816EFA89D03E82B0F /* MockDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3750448873373947390B /* MockDispatchQueue.swift */; };
+		BA6E3D4816EFA89D03E82B0F /* MockMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3750448873373947390B /* MockMainQueue.swift */; };
 		BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */; };
 		BA6E3E85F99741F0DA3AFA40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */; };
 		BA6E3F00F6692326328E7609 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E33FCE3CEE96828C25199 /* Menu.swift */; };
@@ -47,7 +47,7 @@
 		BA6E33FCE3CEE96828C25199 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Networking/Menu.swift; sourceTree = "<group>"; };
 		BA6E3473294F2FB9DC205EC4 /* MockLunchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockLunchAPI.swift; path = Mocks/MockLunchAPI.swift; sourceTree = "<group>"; };
 		BA6E353055F2E8D9CC2BDF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		BA6E3750448873373947390B /* MockDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockDispatchQueue.swift; path = Mocks/MockDispatchQueue.swift; sourceTree = "<group>"; };
+		BA6E3750448873373947390B /* MockMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockMainQueue.swift; path = Mocks/MockMainQueue.swift; sourceTree = "<group>"; };
 		BA6E3824DD609E2A6A85F897 /* ScheduleListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewControllerTest.swift; sourceTree = "<group>"; };
 		BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA6E38D6D936FADCA3C5F20B /* LunchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchViewModel.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		BA6E3D388441FAC554291D6E /* LunchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchAPI.swift; path = Networking/LunchAPI.swift; sourceTree = "<group>"; };
 		BA6E3E78C9A8198839B79303 /* LunchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchError.swift; path = Networking/LunchError.swift; sourceTree = "<group>"; };
 		BA6E3EE7B9C6A78333AD9E40 /* LunchURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunchURLSession.swift; path = Networking/LunchURLSession.swift; sourceTree = "<group>"; };
-		BA6E3F35970F497FC2547622 /* DispatchQueueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueProtocol.swift; sourceTree = "<group>"; };
+		BA6E3F35970F497FC2547622 /* MainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 				BA6E3A669D634F2ED1DA3621 /* LunchAPITest.swift */,
 				BA6E39586AF0C98C2D3187D4 /* MockURLSession.swift */,
 				BA6E3A336F11C1BE6C33B89F /* MockURLSessionDataTask.swift */,
-				BA6E3750448873373947390B /* MockDispatchQueue.swift */,
+				BA6E3750448873373947390B /* MockMainQueue.swift */,
 				BA6E30C4F44D24391EC33D5B /* LunchViewModelTest.swift */,
 				BA6E3A119A08D489E31A4EF7 /* MockLunchViewModel.swift */,
 				BA6E3473294F2FB9DC205EC4 /* MockLunchAPI.swift */,
@@ -117,7 +117,7 @@
 				BA6E38E8189643E91F859B29 /* ScheduleViewController.swift */,
 				BA6E3D388441FAC554291D6E /* LunchAPI.swift */,
 				BA6E3EE7B9C6A78333AD9E40 /* LunchURLSession.swift */,
-				BA6E3F35970F497FC2547622 /* DispatchQueueProtocol.swift */,
+				BA6E3F35970F497FC2547622 /* MainQueue.swift */,
 				BA6E3E78C9A8198839B79303 /* LunchError.swift */,
 				BA6E33FCE3CEE96828C25199 /* Menu.swift */,
 				BA6E32D17EDCA176B5E415F7 /* Localizable.strings */,
@@ -220,7 +220,7 @@
 				BA6E36DF230A0170F3BB6CE2 /* LunchAPITest.swift in Sources */,
 				BA6E399F48CF76E38B97A356 /* MockURLSession.swift in Sources */,
 				BA6E30D5A154F5713C372B94 /* MockURLSessionDataTask.swift in Sources */,
-				BA6E3D4816EFA89D03E82B0F /* MockDispatchQueue.swift in Sources */,
+				BA6E3D4816EFA89D03E82B0F /* MockMainQueue.swift in Sources */,
 				BA6E3C94CF307B28135A7D1E /* LunchViewModelTest.swift in Sources */,
 				BA6E324161941FD938ABBD5E /* MockLunchViewModel.swift in Sources */,
 				BA6E3FF638248E420F71E8B8 /* MockLunchAPI.swift in Sources */,
@@ -236,7 +236,7 @@
 				BA6E32087CA47EA73D2E44D7 /* ScheduleViewController.swift in Sources */,
 				BA6E3F784A6B26DA15A46599 /* LunchAPI.swift in Sources */,
 				BA6E3BEF85DA8D5B3AEAC169 /* LunchURLSession.swift in Sources */,
-				BA6E3A87F7A8A7858D1A663A /* DispatchQueueProtocol.swift in Sources */,
+				BA6E3A87F7A8A7858D1A663A /* MainQueue.swift in Sources */,
 				BA6E3B693401819CD4744E95 /* LunchError.swift in Sources */,
 				BA6E3F00F6692326328E7609 /* Menu.swift in Sources */,
 				BA6E3CA0462C0780A40C9BAC /* LunchViewModel.swift in Sources */,
