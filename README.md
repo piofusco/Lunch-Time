@@ -4,8 +4,7 @@
 
 #### API Mode
 
-While LunchTime will by default load the schedule from a configuration stored on the device, it can also pull data from 
-a mock server built with [Sinatra](http://sinatrarb.com/).
+LunchTime will by default load the schedule from a mock server built with [Sinatra](http://sinatrarb.com/).
 
 In order for this to work, the Sinatra server must be installed and running. Within the root of the project:
 
