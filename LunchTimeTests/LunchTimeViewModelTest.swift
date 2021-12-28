@@ -41,6 +41,26 @@ class LunchTimeViewModelTest: XCTestCase {
 
         XCTAssertEqual(subject.days.count, 93)
     }
+
+    func test__nextMenuItem__returnsInOrderBelow() {
+        let subject = CalendarViewModel(startDate: MONDAY_DECEMBER_27_2021)
+
+        XCTAssertEqual(subject.days[1].menu, Menu.chickenAndWaffles)
+        XCTAssertEqual(subject.days[2].menu, Menu.tacos)
+        XCTAssertEqual(subject.days[3].menu, Menu.curry)
+        XCTAssertEqual(subject.days[4].menu, Menu.pizza)
+        XCTAssertEqual(subject.days[5].menu, Menu.sushi)
+        XCTAssertNil(subject.days[6].menu)
+        XCTAssertNil(subject.days[7].menu)
+        XCTAssertEqual(subject.days[8].menu, Menu.breakfast)
+        XCTAssertEqual(subject.days[9].menu, Menu.hamburgers)
+        XCTAssertEqual(subject.days[10].menu, Menu.spaghetti)
+        XCTAssertEqual(subject.days[11].menu, Menu.salmon)
+        XCTAssertEqual(subject.days[12].menu, Menu.sandwiches)
+        XCTAssertNil(subject.days[13].menu)
+        XCTAssertNil(subject.days[14].menu)
+        XCTAssertEqual(subject.days[15].menu, Menu.chickenAndWaffles)
+    }
 }
 
 fileprivate let MONDAY_DECEMBER_27_2021 = dateFromString("2021-12-27")

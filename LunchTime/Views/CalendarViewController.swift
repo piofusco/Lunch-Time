@@ -77,7 +77,8 @@ extension CalendarViewController: UICollectionViewDataSource {
                 numberText: day.number,
                 date: day.date,
                 isToday: calendar.isDate(day.date, inSameDayAs: Date()),
-                monthText: day.number == "1" ? monthDateFormatter.string(from: day.date) : nil
+                monthText: day.number == "1" ? monthDateFormatter.string(from: day.date) : nil,
+                menuText: day.menu?.toString() ?? ""
         )
         return cell
     }

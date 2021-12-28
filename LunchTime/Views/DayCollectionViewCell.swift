@@ -1,14 +1,6 @@
 import UIKit
 
 class DayCollectionViewCell: UICollectionViewCell {
-    private lazy var circleView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        view.backgroundColor = UIColor.orange
-        return view
-    }()
-
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,12 +19,23 @@ class DayCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    private lazy var menuLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        label.textAlignment = .left
+        label.textColor = .label
+        label.numberOfLines = 0
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        contentView.addSubview(circleView)
         contentView.addSubview(numberLabel)
         contentView.addSubview(monthLabel)
+        contentView.addSubview(menuLabel)
     }
 
     required init?(coder: NSCoder) {
@@ -42,8 +45,6 @@ class DayCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let size = traitCollection.horizontalSizeClass == .compact ? min(min(frame.width, frame.height) - 10, 60) : 45
-
         NSLayoutConstraint.activate([
             monthLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             monthLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
@@ -52,34 +53,35 @@ class DayCollectionViewCell: UICollectionViewCell {
             numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 
-            circleView.centerYAnchor.constraint(equalTo: numberLabel.centerYAnchor),
-            circleView.centerXAnchor.constraint(equalTo: numberLabel.centerXAnchor),
-            circleView.widthAnchor.constraint(equalToConstant: size),
-            circleView.heightAnchor.constraint(equalTo: circleView.widthAnchor)
+            menuLabel.topAnchor.constraint(equalTo: numberLabel.bottomAnchor),
+            menuLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
         ])
-
-        circleView.layer.cornerRadius = size / 2
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        numberLabel.text = ""
-        numberLabel.textColor = .label
-        circleView.isHidden = true
         monthLabel.isHidden = true
         monthLabel.text = ""
+        numberLabel.text = ""
+        numberLabel.textColor = .label
+        menuLabel.text = ""
     }
 
-    func setup(numberText: String, date: Date, isToday: Bool, monthText: String?) {
+    func setup(numberText: String, date: Date, isToday: Bool, monthText: String?, menuText: String?) {
         numberLabel.text = numberText
 
-        circleView.isHidden = isToday ? false : true
+        contentView.backgroundColor = isToday ? UIColor.orange : UIColor.white
         numberLabel.textColor = isToday ? .white : .label
+        monthLabel.textColor = isToday ? .white : .label
+        menuLabel.textColor = isToday ? .white : .label
 
         if let monthText = monthText {
-            monthLabel.isHidden = false
             monthLabel.text = monthText
+        }
+
+        if let menuText = menuText {
+            menuLabel.text = menuText
         }
     }
 }

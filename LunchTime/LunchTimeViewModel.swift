@@ -14,6 +14,8 @@ protocol LunchTimeViewModel {
 
     func initializeDaysFromStartDate() -> [Day]
     func loadDaysOfNextMonth()
+
+    func generateDay(offsetBy dayOffset: Int, for baseDate: Date) throws -> Day
 }
 
 class CalendarViewModel: LunchTimeViewModel {
@@ -24,6 +26,7 @@ class CalendarViewModel: LunchTimeViewModel {
     }()
 
     private let calendar = Calendar(identifier: .gregorian)
+    private var lastMenu: Menu = Menu.sandwiches
 
     private(set) var days: [Day] = []
     var numberOfWeeksInStartDate: Int {
@@ -53,7 +56,6 @@ class CalendarViewModel: LunchTimeViewModel {
         for day in 1..<(numberOfDaysInMonth + offsetInInitialRow) {
             let dayOffset = day >= offsetInInitialRow ? day - offsetInInitialRow : -(offsetInInitialRow - day)
             guard let newDay = try? generateDay(offsetBy: dayOffset, for: firstDayOfMonth) else { continue }
-
             days.append(newDay)
         }
 
@@ -73,14 +75,7 @@ class CalendarViewModel: LunchTimeViewModel {
         var newDays = [Day]()
 
         for i in 0..<numberOfDaysInMonth {
-            guard let newDate = calendar.date(byAdding: .day, value: i, to: firstDayOfNextMonth) else {
-                fatalError("An error occurred when generating the metadata for \(firstDayOfNextMonth)")
-            }
-
-            let newDay = Day(
-                    date: newDate,
-                    number: dateFormatter.string(from: newDate)
-            )
+            guard let newDay = try? generateDay(offsetBy: i, for: firstDayOfNextMonth) else { continue }
             newDays.append(newDay)
         }
 
@@ -95,21 +90,24 @@ class CalendarViewModel: LunchTimeViewModel {
 
         let firstDayWeekday = calendar.component(.weekday, from: firstDayOfMonth)
 
-        return Month(
-                numberOfDays: numberOfDaysInMonth,
-                firstDay: firstDayOfMonth,
-                firstDayWeekday: firstDayWeekday
-        )
+        return Month(numberOfDays: numberOfDaysInMonth, firstDay: firstDayOfMonth, firstDayWeekday: firstDayWeekday)
     }
 
-    private func generateDay(offsetBy dayOffset: Int, for baseDate: Date) throws -> Day {
+    func generateDay(offsetBy dayOffset: Int, for baseDate: Date) throws -> Day {
         guard let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) else {
             throw CalendarDataError.metadataGeneration
         }
 
-        return Day(
-                date: date,
-                number: dateFormatter.string(from: date)
-        )
+        var menu: Menu?
+        switch calendar.component(.weekday, from: date) {
+        case 2..<7:
+            if let newMenu = Menu(rawValue: (lastMenu.rawValue + 1) % Menu.allCases.count) {
+                lastMenu = newMenu
+                menu = lastMenu
+            }
+        default: menu = nil
+        }
+
+        return Day(date: date, number: dateFormatter.string(from: date), menu: menu)
     }
 }
