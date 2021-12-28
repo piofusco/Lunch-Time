@@ -14,7 +14,7 @@ protocol LunchTimeViewModel {
     var numberOfWeeksInStartDate: Int { get }
 
     func initializeDaysFromStartDate() -> [Day]
-    func addDaysOfNextMonth(date: Date)
+    func loadDaysOfNextMonth()
 }
 
 class CalendarViewModel: LunchTimeViewModel {
@@ -55,24 +55,29 @@ class CalendarViewModel: LunchTimeViewModel {
         var days = [Day]()
         for day in 1..<(numberOfDaysInMonth + offsetInInitialRow) {
             let dayOffset = day >= offsetInInitialRow ? day - offsetInInitialRow : -(offsetInInitialRow - day)
+            guard let newDay = try? generateDay(offsetBy: dayOffset, for: firstDayOfMonth) else { continue }
 
-            days.append(generateDay(offsetBy: dayOffset, for: firstDayOfMonth))
+            days.append(newDay)
         }
 
         return days
     }
 
-    func addDaysOfNextMonth(date: Date) {
-        guard let metadata = try? generateMonth(for: date) else {
-            fatalError("An error occurred when generating the metadata for \(date)")
+    func loadDaysOfNextMonth() {
+        guard let firstDayOfNextMonth = calendar.date(byAdding: .day, value: 1, to: days[days.count - 1].date) else {
+            return
+        }
+
+        guard let metadata = try? generateMonth(for: firstDayOfNextMonth) else {
+            fatalError("An error occurred when generating the metadata for \(firstDayOfNextMonth)")
         }
 
         let numberOfDaysInMonth = metadata.numberOfDays
         var newDays = [Day]()
 
         for i in 0..<numberOfDaysInMonth {
-            guard let newDate = calendar.date(byAdding: .day, value: i, to: date) else {
-                fatalError("An error occurred when generating the metadata for \(date)")
+            guard let newDate = calendar.date(byAdding: .day, value: i, to: firstDayOfNextMonth) else {
+                fatalError("An error occurred when generating the metadata for \(firstDayOfNextMonth)")
             }
 
             let newDay = Day(
@@ -101,8 +106,10 @@ class CalendarViewModel: LunchTimeViewModel {
         )
     }
 
-    private func generateDay(offsetBy dayOffset: Int, for baseDate: Date) -> Day {
-        let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
+    private func generateDay(offsetBy dayOffset: Int, for baseDate: Date) throws -> Day {
+        guard let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) else {
+            throw CalendarDataError.metadataGeneration
+        }
 
         return Day(
                 date: date,

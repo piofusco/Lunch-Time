@@ -10,6 +10,7 @@
 		BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6E3102FC6754684451A148 /* Assets.xcassets */; };
 		BA6E35F5E0DF51095B45C3B0 /* CalendarViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3824DD609E2A6A85F897 /* CalendarViewControllerTest.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
+		BA6E38AA7A541B04D5905E5E /* LunchTimeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38392A1D3F6903EA6109 /* LunchTimeViewModelTest.swift */; };
 		BA6E3A17E2748B55D1EE8EDA /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E30564D4B298B875C8683 /* Month.swift */; };
 		BA6E3A87F7A8A7858D1A663A /* MainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3F35970F497FC2547622 /* MainQueue.swift */; };
 		BA6E3D4816EFA89D03E82B0F /* MockMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3750448873373947390B /* MockMainQueue.swift */; };
@@ -39,6 +40,7 @@
 		BA6E353055F2E8D9CC2BDF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		BA6E3750448873373947390B /* MockMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockMainQueue.swift; path = Mocks/MockMainQueue.swift; sourceTree = "<group>"; };
 		BA6E3824DD609E2A6A85F897 /* CalendarViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerTest.swift; sourceTree = "<group>"; };
+		BA6E38392A1D3F6903EA6109 /* LunchTimeViewModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchTimeViewModelTest.swift; sourceTree = "<group>"; };
 		BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA6E3919425A48F8D0BB27E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				BA6E3824DD609E2A6A85F897 /* CalendarViewControllerTest.swift */,
 				BA6E3750448873373947390B /* MockMainQueue.swift */,
+				BA6E38392A1D3F6903EA6109 /* LunchTimeViewModelTest.swift */,
 			);
 			path = LunchTimeTests;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				BA6E35F5E0DF51095B45C3B0 /* CalendarViewControllerTest.swift in Sources */,
 				BA6E3D4816EFA89D03E82B0F /* MockMainQueue.swift in Sources */,
+				BA6E38AA7A541B04D5905E5E /* LunchTimeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

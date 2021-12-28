@@ -80,13 +80,7 @@ extension CalendarViewController: UICollectionViewDataSource {
             guard let self = self else { return }
 
             let oldTotal = self.viewModel.days.count
-            guard let firstDayOfNextMonth = self.calendar.date(
-                    byAdding: .day,
-                    value: 1,
-                    to: self.viewModel.days[self.viewModel.days.count - 1].date) else {
-                return
-            }
-            self.viewModel.addDaysOfNextMonth(date: firstDayOfNextMonth)
+            self.viewModel.loadDaysOfNextMonth()
 
             var newIndexPaths = [IndexPath]()
             for i in oldTotal..<self.viewModel.days.count {
