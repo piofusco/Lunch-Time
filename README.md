@@ -1,18 +1,5 @@
 # LunchTime
 
-#### 📀 Setup 📀
-
-#### API Mode
-
-LunchTime will by default load the schedule from a mock server built with [Sinatra](http://sinatrarb.com/).
-
-In order for this to work, the Sinatra server must be installed and running. Within the root of the project:
-
-```
-gem install sinatra-contrib
-ruby ./server.rb
-```
-
 #### Instructions
 
 For this next step, you'll be creating a small sample app that showcases your skill and talent as an engineer. Expect
