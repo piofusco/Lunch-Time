@@ -1,6 +1,6 @@
 import UIKit
 
-class DateCollectionViewCell: UICollectionViewCell {
+class DayCollectionViewCell: UICollectionViewCell {
     private lazy var circleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,11 +18,21 @@ class DateCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    private lazy var monthLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
+        label.textColor = .label
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         contentView.addSubview(circleView)
         contentView.addSubview(numberLabel)
+        contentView.addSubview(monthLabel)
     }
 
     required init?(coder: NSCoder) {
@@ -35,6 +45,10 @@ class DateCollectionViewCell: UICollectionViewCell {
         let size = traitCollection.horizontalSizeClass == .compact ? min(min(frame.width, frame.height) - 10, 60) : 45
 
         NSLayoutConstraint.activate([
+            monthLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            monthLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+            monthLabel.heightAnchor.constraint(equalToConstant: 15),
+
             numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 
@@ -47,15 +61,25 @@ class DateCollectionViewCell: UICollectionViewCell {
         circleView.layer.cornerRadius = size / 2
     }
 
-    func setup(numberText: String, date: Date, isToday: Bool) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        numberLabel.text = ""
+        numberLabel.textColor = .label
+        circleView.isHidden = true
+        monthLabel.isHidden = true
+        monthLabel.text = ""
+    }
+
+    func setup(numberText: String, date: Date, isToday: Bool, monthText: String?) {
         numberLabel.text = numberText
 
-        if isToday {
-            circleView.isHidden = false
-            numberLabel.textColor = .white
-        } else {
-            numberLabel.textColor = .label
-            circleView.isHidden = true
+        circleView.isHidden = isToday ? false : true
+        numberLabel.textColor = isToday ? .white : .label
+
+        if let monthText = monthText {
+            monthLabel.isHidden = false
+            monthLabel.text = monthText
         }
     }
 }

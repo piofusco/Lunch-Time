@@ -17,10 +17,16 @@ class CalendarViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.isScrollEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(DateCollectionViewCell.self, forCellWithReuseIdentifier: "DateCollectionViewCell")
+        collectionView.register(DayCollectionViewCell.self, forCellWithReuseIdentifier: "DateCollectionViewCell")
         collectionView.dataSource = self
         collectionView.delegate = self
         return collectionView
+    }()
+
+    private lazy var monthDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "LLLL"
+        return dateFormatter
     }()
 
     private let calendar = Calendar(identifier: .gregorian)
@@ -63,14 +69,15 @@ extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let day = viewModel.days[indexPath.row]
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCollectionViewCell", for: indexPath) as? DateCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCollectionViewCell", for: indexPath) as? DayCollectionViewCell else {
             fatalError("Unable to dequeue DateCollectionViewCell")
         }
 
         cell.setup(
                 numberText: day.number,
                 date: day.date,
-                isToday: calendar.isDate(day.date, inSameDayAs: Date())
+                isToday: calendar.isDate(day.date, inSameDayAs: Date()),
+                monthText: day.number == "1" ? monthDateFormatter.string(from: day.date) : nil
         )
         return cell
     }
