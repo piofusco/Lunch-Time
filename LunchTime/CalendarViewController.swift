@@ -168,7 +168,7 @@ private extension CalendarViewController {
         return days
     }
 
-    func monthMetadata(for baseDate: Date) throws -> MonthMetadata {
+    func monthMetadata(for baseDate: Date) throws -> Month {
         guard let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
               let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: baseDate)) else {
             throw CalendarDataError.metadataGeneration
@@ -176,7 +176,7 @@ private extension CalendarViewController {
 
         let firstDayWeekday = calendar.component(.weekday, from: firstDayOfMonth)
 
-        return MonthMetadata(
+        return Month(
                 numberOfDays: numberOfDaysInMonth,
                 firstDay: firstDayOfMonth,
                 firstDayWeekday: firstDayWeekday
@@ -216,16 +216,4 @@ private extension CalendarViewController {
     enum CalendarDataError: Error {
         case metadataGeneration
     }
-}
-
-struct MonthMetadata {
-    let numberOfDays: Int
-    let firstDay: Date
-    let firstDayWeekday: Int
-}
-
-struct Day {
-    let date: Date
-    let number: String
-    let isSelected: Bool
 }
