@@ -1,11 +1,11 @@
 import UIKit
 
 class DateCollectionViewCell: UICollectionViewCell {
-    private lazy var selectionBackgroundView: UIView = {
+    private lazy var circleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.backgroundColor = .systemRed
+        view.backgroundColor = UIColor.orange
         return view
     }()
 
@@ -18,27 +18,10 @@ class DateCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    private lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMMM d")
-        return dateFormatter
-    }()
-
-    var day: Day? {
-        didSet {
-            guard let day = day else { return }
-
-            numberLabel.text = day.number
-            accessibilityLabel = dateFormatter.string(from: day.date)
-            updateSelectionStatus()
-        }
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        contentView.addSubview(selectionBackgroundView)
+        contentView.addSubview(circleView)
         contentView.addSubview(numberLabel)
     }
 
@@ -55,40 +38,24 @@ class DateCollectionViewCell: UICollectionViewCell {
             numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 
-            selectionBackgroundView.centerYAnchor.constraint(equalTo: numberLabel.centerYAnchor),
-            selectionBackgroundView.centerXAnchor.constraint(equalTo: numberLabel.centerXAnchor),
-            selectionBackgroundView.widthAnchor.constraint(equalToConstant: size),
-            selectionBackgroundView.heightAnchor.constraint(equalTo: selectionBackgroundView.widthAnchor)
+            circleView.centerYAnchor.constraint(equalTo: numberLabel.centerYAnchor),
+            circleView.centerXAnchor.constraint(equalTo: numberLabel.centerXAnchor),
+            circleView.widthAnchor.constraint(equalToConstant: size),
+            circleView.heightAnchor.constraint(equalTo: circleView.widthAnchor)
         ])
 
-        selectionBackgroundView.layer.cornerRadius = size / 2
+        circleView.layer.cornerRadius = size / 2
     }
-}
 
-private extension DateCollectionViewCell {
-    func updateSelectionStatus() {
-        guard let day = day else { return }
+    func setup(numberText: String, date: Date, isToday: Bool) {
+        numberLabel.text = numberText
 
-        if day.isSelected {
-            applySelectedStyle()
+        if isToday {
+            circleView.isHidden = false
+            numberLabel.textColor = .white
         } else {
-            applyDefaultStyle()
+            numberLabel.textColor = .label
+            circleView.isHidden = true
         }
-    }
-
-    func applySelectedStyle() {
-        accessibilityTraits.insert(.selected)
-        accessibilityHint = nil
-
-        selectionBackgroundView.isHidden = false
-        numberLabel.textColor = selectionBackgroundView.isHidden ? .systemRed : .white
-    }
-
-    func applyDefaultStyle() {
-        accessibilityTraits.remove(.selected)
-        accessibilityHint = "Tap to select"
-
-        numberLabel.textColor = .label
-        selectionBackgroundView.isHidden = true
     }
 }

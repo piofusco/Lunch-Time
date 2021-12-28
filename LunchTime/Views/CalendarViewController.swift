@@ -67,7 +67,11 @@ extension CalendarViewController: UICollectionViewDataSource {
             fatalError("Unable to dequeue DateCollectionViewCell")
         }
 
-        cell.day = day
+        cell.setup(
+                numberText: day.number,
+                date: day.date,
+                isToday: calendar.isDate(day.date, inSameDayAs: Date())
+        )
         return cell
     }
 

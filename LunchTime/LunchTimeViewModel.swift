@@ -10,7 +10,6 @@ enum CalendarDataError: Error {
 
 protocol LunchTimeViewModel {
     var days: [Day] { get }
-    var selectedDate: Date { get set }
     var numberOfWeeksInStartDate: Int { get }
 
     func initializeDaysFromStartDate() -> [Day]
@@ -34,12 +33,10 @@ class CalendarViewModel: LunchTimeViewModel {
     }
 
     var startDate: Date
-    var selectedDate: Date
 
     init(startDate: Date) {
         self.startDate = startDate
 
-        selectedDate = startDate
         days = initializeDaysFromStartDate()
     }
 
@@ -82,8 +79,7 @@ class CalendarViewModel: LunchTimeViewModel {
 
             let newDay = Day(
                     date: newDate,
-                    number: dateFormatter.string(from: newDate),
-                    isSelected: false
+                    number: dateFormatter.string(from: newDate)
             )
             newDays.append(newDay)
         }
@@ -113,8 +109,7 @@ class CalendarViewModel: LunchTimeViewModel {
 
         return Day(
                 date: date,
-                number: dateFormatter.string(from: date),
-                isSelected: calendar.isDate(date, inSameDayAs: selectedDate)
+                number: dateFormatter.string(from: date)
         )
     }
 }
