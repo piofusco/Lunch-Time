@@ -61,11 +61,12 @@ class DayCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        monthLabel.isHidden = true
         monthLabel.text = ""
+        monthLabel.textColor = .label
         numberLabel.text = ""
         numberLabel.textColor = .label
         menuLabel.text = ""
+        menuLabel.textColor = .label
     }
 
     func setup(numberText: String, date: Date, isToday: Bool, monthText: String?, menuText: String?) {
