@@ -16,8 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        let scheduleListViewController = CalendarViewController(mainQueue: LunchMainQueue())
+        let calendarViewModel = CalendarViewModel(startDate: Date())
+        let scheduleListViewController = CalendarViewController(
+                viewModel: calendarViewModel,
+                mainQueue: LunchMainQueue()
+        )
         let navigationController = UINavigationController(rootViewController: scheduleListViewController)
+
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController
         self.window = window

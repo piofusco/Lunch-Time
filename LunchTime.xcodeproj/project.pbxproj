@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6E3102FC6754684451A148 /* Assets.xcassets */; };
-		BA6E32087CA47EA73D2E44D7 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E38E8189643E91F859B29 /* CalendarViewController.swift */; };
 		BA6E35F5E0DF51095B45C3B0 /* CalendarViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3824DD609E2A6A85F897 /* CalendarViewControllerTest.swift */; };
 		BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */; };
 		BA6E3A17E2748B55D1EE8EDA /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E30564D4B298B875C8683 /* Month.swift */; };
 		BA6E3A87F7A8A7858D1A663A /* MainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3F35970F497FC2547622 /* MainQueue.swift */; };
-		BA6E3AAA1476F3D81E872DEA /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3ABB48E21CAE6801C711 /* DateCollectionViewCell.swift */; };
-		BA6E3B2BDA3E57F39F3B40B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA6E32D17EDCA176B5E415F7 /* Localizable.strings */; };
 		BA6E3D4816EFA89D03E82B0F /* MockMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3750448873373947390B /* MockMainQueue.swift */; };
 		BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */; };
+		BA6E3E7DD2EA16B5DB072A26 /* LunchTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3D3C1D92912E162925B0 /* LunchTimeViewModel.swift */; };
 		BA6E3E85F99741F0DA3AFA40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */; };
 		BA6E3E88DCEE8D4C076BD6DA /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3311F4287DD19A90F9D4 /* Day.swift */; };
+		BA6E3EDA69756D0A3A2D97AD /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3ED1ECAF24C563042B89 /* DateCollectionViewCell.swift */; };
+		BA6E3EF4BBE0F92898A4C8AC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6E3EA9C0589DBFD0F74BC9 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +35,17 @@
 		6312FF222778C36A004325DE /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LunchTime.app; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTime.app"; sourceTree = "<absolute>"; };
 		BA6E30564D4B298B875C8683 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Month.swift; path = Models/Month.swift; sourceTree = "<group>"; };
 		BA6E3102FC6754684451A148 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA6E32D17EDCA176B5E415F7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		BA6E3311F4287DD19A90F9D4 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = Models/Day.swift; sourceTree = "<group>"; };
 		BA6E353055F2E8D9CC2BDF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		BA6E3750448873373947390B /* MockMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockMainQueue.swift; path = Mocks/MockMainQueue.swift; sourceTree = "<group>"; };
 		BA6E3824DD609E2A6A85F897 /* CalendarViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerTest.swift; sourceTree = "<group>"; };
 		BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA6E38E8189643E91F859B29 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		BA6E3919425A48F8D0BB27E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6E399C90B982A1F52E8A9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA6E3ABB48E21CAE6801C711 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA6E3C0FCBB9D9B23B88CE9C /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LunchTimeTests.xctest; path = "/Users/jarvis/workspace/LunchTime/build/Debug-iphoneos/LunchTimeTests.xctest"; sourceTree = "<absolute>"; };
+		BA6E3D3C1D92912E162925B0 /* LunchTimeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunchTimeViewModel.swift; sourceTree = "<group>"; };
+		BA6E3EA9C0589DBFD0F74BC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = Views/CalendarViewController.swift; sourceTree = "<group>"; };
+		BA6E3ED1ECAF24C563042B89 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = Views/DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA6E3F35970F497FC2547622 /* MainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,12 +92,12 @@
 				BA6E35A5C7C4AF24BD4A7843 /* LaunchScreen.storyboard */,
 				BA6E353055F2E8D9CC2BDF8B /* Info.plist */,
 				BA6E3883A62F041E295F5C5E /* SceneDelegate.swift */,
-				BA6E38E8189643E91F859B29 /* CalendarViewController.swift */,
 				BA6E3F35970F497FC2547622 /* MainQueue.swift */,
-				BA6E32D17EDCA176B5E415F7 /* Localizable.strings */,
-				BA6E3ABB48E21CAE6801C711 /* DateCollectionViewCell.swift */,
 				BA6E30564D4B298B875C8683 /* Month.swift */,
 				BA6E3311F4287DD19A90F9D4 /* Day.swift */,
+				BA6E3ED1ECAF24C563042B89 /* DateCollectionViewCell.swift */,
+				BA6E3EA9C0589DBFD0F74BC9 /* CalendarViewController.swift */,
+				BA6E3D3C1D92912E162925B0 /* LunchTimeViewModel.swift */,
 			);
 			path = LunchTime;
 			sourceTree = "<group>";
@@ -174,7 +174,6 @@
 			files = (
 				BA6E31F0EECEE9124A7480D0 /* Assets.xcassets in Resources */,
 				BA6E386BA7DE1EC35F2C68B3 /* LaunchScreen.storyboard in Resources */,
-				BA6E3B2BDA3E57F39F3B40B8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,11 +202,12 @@
 			files = (
 				BA6E3E85F99741F0DA3AFA40 /* AppDelegate.swift in Sources */,
 				BA6E3DD5B2D0CA7D3A73A616 /* SceneDelegate.swift in Sources */,
-				BA6E32087CA47EA73D2E44D7 /* CalendarViewController.swift in Sources */,
 				BA6E3A87F7A8A7858D1A663A /* MainQueue.swift in Sources */,
-				BA6E3AAA1476F3D81E872DEA /* DateCollectionViewCell.swift in Sources */,
 				BA6E3A17E2748B55D1EE8EDA /* Month.swift in Sources */,
 				BA6E3E88DCEE8D4C076BD6DA /* Day.swift in Sources */,
+				BA6E3EDA69756D0A3A2D97AD /* DateCollectionViewCell.swift in Sources */,
+				BA6E3EF4BBE0F92898A4C8AC /* CalendarViewController.swift in Sources */,
+				BA6E3E7DD2EA16B5DB072A26 /* LunchTimeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
