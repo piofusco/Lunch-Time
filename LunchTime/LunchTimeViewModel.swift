@@ -45,7 +45,7 @@ class CalendarViewModel: LunchTimeViewModel {
 
     func initializeDaysFromStartDate() -> [Day] {
         guard let metadata = try? generateMonth(for: startDate) else {
-            fatalError("An error occurred when generating the metadata for \(startDate)")
+            return []
         }
 
         let numberOfDaysInMonth = metadata.numberOfDays
@@ -68,7 +68,7 @@ class CalendarViewModel: LunchTimeViewModel {
         }
 
         guard let metadata = try? generateMonth(for: firstDayOfNextMonth) else {
-            fatalError("An error occurred when generating the metadata for \(firstDayOfNextMonth)")
+            return
         }
 
         let numberOfDaysInMonth = metadata.numberOfDays

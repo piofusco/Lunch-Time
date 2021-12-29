@@ -42,7 +42,7 @@ class CalendarViewController: UIViewController {
     }
 
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func loadView() {
@@ -70,7 +70,7 @@ extension CalendarViewController: UICollectionViewDataSource {
         let day = viewModel.days[indexPath.row]
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCollectionViewCell", for: indexPath) as? DayCollectionViewCell else {
-            fatalError("Unable to dequeue DateCollectionViewCell")
+            return UICollectionViewCell()
         }
 
         cell.setup(
